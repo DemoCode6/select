@@ -1,0 +1,13 @@
+<view class='ms-content-box'>
+    <view class='ms-content' bindtap='selectToggle'>
+    <!-- https://www.cnblogs.com/muphy/p/11109734.html -->
+    <!-- <view class='ms-text'>{{selectText}}</view> demo如果下来列表的标题不用修改的情况下 -->
+    <block  wx:for="{{propArray}}" wx:for-index="key" wx:for-item="vo">
+    <view class='ms-text' wx:if="{{key == current_index}}">{{vo.value}}</view>
+    </block>
+         <view class="{{selectShow ? 'icon-up' : 'icon-down'}}"></view>
+    </view>
+    <view class='ms-options' wx:if="{{selectShow}}">
+        <view wx:for="{{propArray}}" data-index="{{index}}" wx:key='index' class='ms-option' bindtap='setText'>{{item.value}}</view>
+    </view>
+</view>
